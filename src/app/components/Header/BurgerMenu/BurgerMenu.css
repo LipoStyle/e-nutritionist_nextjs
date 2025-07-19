@@ -1,0 +1,136 @@
+/* 🌟 BURGER BUTTON */
+.burger-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1101;
+  align-self: center;
+}
+
+.burger-button:focus-visible {
+  outline: 2px solid var(--color-green);
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  transition: all 0.3s ease;
+  border-radius: 12px;
+}
+
+/* 🔹 Light Mode */
+.light-mode .burger-button .line {
+  background-color: var(--color-dark);
+}
+
+/* 🔹 Dark Mode */
+.dark-mode .burger-button .line {
+  background-color: var(--color-light-green);
+}
+
+/* 🍔 Animation */
+.burger-button.burger-active .line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 6px);
+}
+
+.burger-button.burger-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-button.burger-active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* 📱 MOBILE MENU PANEL */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 80%;
+  max-width: 200px;
+  height: 100vh;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 2rem;
+  transition: left 0.3s ease-in-out;
+  z-index: 1100;
+  overflow-y: auto;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 🌗 Background for themes */
+.light-mode .mobile-menu {
+  background-color: var(--color-light-green-transparent);
+  color: var(--color-dark);
+  backdrop-filter: blur(12px);
+}
+
+.dark-mode .mobile-menu {
+  background-color: var(--color-dark-transparent);
+  color: var(--color-light-green);
+  backdrop-filter: blur(10px);
+}
+
+/* Slide In */
+.mobile-menu.open {
+  left: 0;
+}
+
+/* 🌗 Feature Toggles (Theme + Language) */
+.mobile-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 🔗 NAVIGATION LINKS */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobile-nav .nav-link {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+/* Light Mode Text */
+.light-mode .mobile-nav .nav-link {
+  color: var(--color-dark);
+}
+
+.light-mode .mobile-nav .nav-link:hover {
+  color: var(--color-white);
+}
+
+/* Dark Mode Text */
+.dark-mode .mobile-nav .nav-link {
+  color: var(--color-light-green);
+}
+
+.dark-mode .mobile-nav .nav-link:hover {
+  color: var(--color-white);
+}
+
+/* 🍔 MOBILE VISIBILITY */
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 840px) {
+  .mobile-only {
+    display: flex;
+  }
+}

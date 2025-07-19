@@ -1,0 +1,107 @@
+/* =============================== */
+/*        ABOUT CTA SECTION        */
+/* =============================== */
+.about-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  border-radius: 12px;
+  background-color: var(--color-dark-transparent);
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* =============================== */
+/*         HEADLINE                */
+/* =============================== */
+.about-cta h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--color-green);
+  margin-bottom: 20px;
+  /* Removed animations to ensure visibility */
+}
+
+/* =============================== */
+/*         BUTTONS SECTION         */
+/* =============================== */
+.cta-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cta-buttons p {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+/* =============================== */
+/*         SOCIAL MEDIA ICONS      */
+/* =============================== */
+.social-icons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* =============================== */
+/*         SOCIAL ICON IMAGES      */
+/* =============================== */
+.social-icons-container img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons-container img:hover {
+  transform: scale(1.1);
+}
+
+/* =============================== */
+/*       LIGHT & DARK MODE         */
+/* =============================== */
+.light-mode .about-cta {
+  background-color: var(--color-white);
+}
+
+.light-mode .about-cta h2,
+.light-mode .cta-buttons p {
+  color: var(--color-dark);
+}
+
+.dark-mode .about-cta {
+  background-color: var(--color-dark-transparent);
+}
+
+.dark-mode .about-cta h2,
+.dark-mode .cta-buttons p {
+  color: var(--color-green);
+}
+
+/* =============================== */
+/*       RESPONSIVE DESIGN         */
+/* =============================== */
+@media (max-width: 840px) {
+  .cta-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 460px) {
+  .about-cta h2 {
+    font-size: 24px;
+  }
+
+  .cta-buttons p {
+    font-size: 18px;
+  }
+}

@@ -1,0 +1,128 @@
+/* 🌟 GENERAL STYLING (Functionality & Layout First) */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* 🔹 Navbar Links */
+.navbar a {
+  position: relative;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* 🌟 COLOR STYLING */
+/* 🔹 Light Mode */
+.light-mode .navbar a {
+  color: var(--color-white);
+}
+.light-mode .navbar a::after {
+  background-color: var(--color-dark);
+}
+.light-mode .navbar a:hover {
+  color: var(--color-dark);
+}
+
+/* 🔹 Dark Mode */
+.dark-mode .navbar a {
+  color: var(--color-white);
+}
+
+.dark-mode .navbar a::after {
+  background-color: var(--color-green);
+}
+
+/* 🔹 Green Bar Animation */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+/* 🔹 Hover Effect */
+.navbar a:hover {
+  color: var(--color-light-green);
+}
+
+/* 🌟 RESPONSIVE DESIGN */
+@media (max-width: 840px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 180px; /* I made this a little wider for the utilities */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 21px 21px 20px 21px;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    gap: 42px; /* spacing between utilities and links */
+  }
+
+  /* 🔹 Animate In */
+  .navbar.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+
+  /* 🌟 COLOR STYLING */
+  .light-mode .navbar {
+    background-color: var(--color-light-green-transparent);
+  }
+
+  .dark-mode .navbar {
+    background-color: var(--color-dark-transparent);
+  }
+
+  /* 🔹 Utilities section (LanguagePicker + DarkModeToggle) */
+  .navbar-utilities {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* 🔹 Links below utilities */
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+    width: 100%;
+  }
+}
+
+/* Desktop-specific */
+@media (min-width: 841px) {
+  /* In desktop mode: no utilities inside navbar */
+  .navbar-utilities {
+    display: none;
+  }
+
+  .navbar-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+}

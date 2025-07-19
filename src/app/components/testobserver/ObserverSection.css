@@ -1,0 +1,13 @@
+/* components/testobserver/ObserverSection.css */
+
+.observer-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, transform;
+}
+
+.observer-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}

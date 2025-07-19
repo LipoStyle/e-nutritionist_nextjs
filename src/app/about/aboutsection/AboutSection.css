@@ -1,0 +1,135 @@
+/* =============================== */
+/*        ABOUT INTRO SECTION      */
+/* =============================== */
+.about-intro {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+
+/* =============================== */
+/*         IMAGE SECTION           */
+/* =============================== */
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background-color: var(--color-green);
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+/* =============================== */
+/*         TEXT SECTION            */
+/* =============================== */
+.about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  transition: color 0.3s ease-in-out;
+}
+
+.about-text h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--color-green);
+  letter-spacing: 1px;
+}
+
+.about-text h3 {
+  font-size: 22px;
+  color: var(--color-light-green);
+}
+
+.about-text p {
+  font-size: 18px;
+  color: var(--color-white);
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+.about-specialties {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  column-gap: 30px;
+  color: var(--color-light-gray);
+  text-align: left;
+}
+
+/* =============================== */
+/*        LAZY LOADING EFFECT      */
+/* =============================== */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.lazy-load.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================== */
+/*       LIGHT & DARK MODE         */
+/* =============================== */
+.light-mode .about-text h2,
+.light-mode .about-text h3 {
+  color: var(--color-dark);
+}
+
+.light-mode .about-text p,
+.light-mode .about-specialties {
+  color: var(--color-dark);
+}
+
+.dark-mode .about-text h2,
+.dark-mode .about-text h3 {
+  color: var(--color-green);
+}
+
+.dark-mode .about-text p,
+.dark-mode .about-specialties {
+  color: var(--color-white);
+}
+
+/* =============================== */
+/*       RESPONSIVE DESIGN         */
+/* =============================== */
+@media (max-width: 840px) {
+  .about-intro {
+    flex-direction: column;
+  }
+  .about-text h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 460px) {
+  .about-intro {
+    flex-direction: column;
+  }
+  .about-text h2 {
+    font-size: 28px;
+  }
+  .about-specialties {
+    grid-template-columns: 1fr;
+  }
+}

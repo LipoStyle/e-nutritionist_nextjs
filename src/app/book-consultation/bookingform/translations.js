@@ -1,0 +1,50 @@
+export const translations = {
+  en: {
+    title: 'Book a Consultation',
+    error: 'Unable to fetch services. Please try again later.',
+    service: 'Select a Service:',
+    selectService: '-- Select a Service --',
+    noServices: 'No services available',
+    date: 'Select Date:',
+    time: 'Select Time:',
+    selectTime: '-- Select a Time --',
+    noTimes: 'No available times',
+    name: 'Name:',
+    email: 'Email:',
+    phone: 'Phone Number:',
+    message: 'Message (Optional):',
+    submit: 'Book Now'
+  },
+  el: {
+    title: 'Κλείσε Ραντεβού',
+    error: '❌ Αποτυχία φόρτωσης υπηρεσιών. Δοκιμάστε ξανά αργότερα.',
+    service: 'Επιλέξτε Υπηρεσία:',
+    selectService: '-- Επιλέξτε Υπηρεσία --',
+    noServices: 'Δεν υπάρχουν διαθέσιμες υπηρεσίες',
+    date: 'Επιλέξτε Ημερομηνία:',
+    time: 'Επιλέξτε Ώρα:',
+    selectTime: '-- Επιλέξτε Ώρα --',
+    noTimes: 'Δεν υπάρχουν διαθέσιμες ώρες',
+    name: 'Ονοματεπώνυμο:',
+    email: 'Email:',
+    phone: 'Αριθμός Τηλεφώνου:',
+    message: 'Μήνυμα (προαιρετικό):',
+    submit: 'Κλείσε Ραντεβού'
+  },
+  es: {
+    title: 'Reservar una Consulta',
+    error: '❌ No se pudieron cargar los servicios. Inténtalo más tarde.',
+    service: 'Selecciona un Servicio:',
+    selectService: '-- Selecciona un Servicio --',
+    noServices: 'No hay servicios disponibles',
+    date: 'Selecciona una Fecha:',
+    time: 'Selecciona una Hora:',
+    selectTime: '-- Selecciona una Hora --',
+    noTimes: 'No hay horarios disponibles',
+    name: 'Nombre:',
+    email: 'Correo Electrónico:',
+    phone: 'Número de Teléfono:',
+    message: 'Mensaje (Opcional):',
+    submit: 'Reservar Ahora'
+  }
+}

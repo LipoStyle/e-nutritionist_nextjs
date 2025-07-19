@@ -1,0 +1,153 @@
+/* 🌟 GENERAL NEWSLETTER STYLING */
+.newsletter {
+  padding: 35px 25px;
+  border-radius: 12px;
+  box-shadow: var(--color-soft-white-blur);
+  text-align: center;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  margin: auto;
+}
+
+/* 🔹 Lazy Load Animation */
+.newsletter.lazy-load {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.newsletter.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌟 LIGHT & DARK MODE STYLING */
+/* 🔹 Light Mode */
+.light-mode .newsletter {
+  background-color: var(--color-light-green-transparent);
+}
+
+.light-mode .newsletter-title {
+  color: var(--color-dark);
+}
+
+.light-mode .newsletter-description {
+  color: var(--color-white);
+}
+
+.light-mode .newsletter-input {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark-transparent);
+}
+
+.light-mode .newsletter-button {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+.light-mode .newsletter-button:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+/* 🔹 Dark Mode */
+.dark-mode .newsletter {
+  background-color: var(--color-dark-transparent);
+}
+
+.dark-mode .newsletter-title {
+  color: var(--color-light-green);
+}
+
+.dark-mode .newsletter-description {
+  color: var(--color-white);
+}
+
+.dark-mode .newsletter-input {
+  background-color: var(--color-dark-alt);
+  color: var(--color-white);
+  border: 2px solid var(--color-light-green);
+}
+
+.dark-mode .newsletter-button {
+  background-color: var(--color-light-green);
+  color: var(--color-dark);
+}
+
+.dark-mode .newsletter-button:hover {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+/* 🌟 FORM STYLING */
+.newsletter-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-family: var(--font-secondary);
+  transition: color 0.3s ease-in-out;
+}
+
+.newsletter-description {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.newsletter-input {
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 65%;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.newsletter-input:focus {
+  outline: none;
+}
+
+.newsletter-button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: var(--font-secondary);
+  cursor: pointer;
+  width: 35%;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* 🌟 RESPONSIVE DESIGN */
+@media (max-width: 840px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-input,
+  .newsletter-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .newsletter {
+    padding: 25px 15px;
+  }
+
+  .newsletter-title {
+    font-size: 1.5rem;
+  }
+
+  .newsletter-description {
+    font-size: 0.9rem;
+  }
+}

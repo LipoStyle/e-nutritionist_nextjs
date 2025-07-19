@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+}
+
+model ServicePlan {
+  id          Int                    @id @default(autoincrement())
+  title       String
+  price       Decimal
+  description String
+  language    String                 // 'en', 'es', or 'el'
+  order       Int
+  createdAt   DateTime              @default(now())
+  updatedAt   DateTime              @updatedAt
+
+  features    ServicePlanFeature[]
+}
+
+model ServicePlanFeature {
+  id             Int          @id @default(autoincrement())
+  name           String
+  servicePlanId  Int
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+
+  servicePlan    ServicePlan  @relation(fields: [servicePlanId], references: [id], onDelete: Cascade)
+}
+model Recipe {
+  id               Int                @id @default(autoincrement())
+  title            String
+  slug             String             @unique
+  description      String
+  imageUrl         String
+  category         String
+  language         String
+  publishedDate    DateTime
+
+  ingredients      Ingredient[]
+  instructions     Instruction[]
+  valuableInfo     ValuableInfo?
+  metaInfo         MetaInfo?
+  nutritionalFacts NutritionalFact[]
+}
+
+model Ingredient {
+  id        Int     @id @default(autoincrement())
+  recipeId  Int
+  name      String
+  quantity  Float
+  size      String
+
+  recipe    Recipe  @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+}
+
+model Instruction {
+  id          Int     @id @default(autoincrement())
+  recipeId    Int
+  stepNumber  Int
+  stepContent String
+
+  recipe      Recipe  @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+}
+
+model ValuableInfo {
+  id         Int    @id @default(autoincrement())
+  recipeId   Int    @unique
+  duration   String
+  difficulty String
+  portions   Int
+
+  recipe     Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+}
+
+model MetaInfo {
+  id              Int    @id @default(autoincrement())
+  recipeId        Int    @unique
+  metaTitle       String
+  metaDescription String
+  metaKeywords    String
+
+  recipe          Recipe @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+}
+
+model NutritionalFact {
+  id        Int     @id @default(autoincrement())
+  recipeId  Int
+  name      String
+  quantity  Float
+  size      String
+
+  recipe    Recipe  @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+}

@@ -1,0 +1,61 @@
+/* 🔹 Each Slide */
+.concept-slide {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* 🔹 Concept Card */
+.concept-card {
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.concept-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* 🔹 Concept Image */
+.concept-image {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* 🔹 Concept Title */
+.concept-title {
+  font-family: var(--font-secondary);
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+/* 🔹 Concept Description */
+.concept-description {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* 🔹 Color Theming */
+.light-mode .concept-card {
+  background: var(--color-dark);
+}
+.light-mode .concept-title {
+  color: var(--color-light-green);
+}
+.light-mode .concept-description {
+  color: var(--color-white);
+}
+.dark-mode .concept-card {
+  background: var(--color-light-green);
+}
+.dark-mode .concept-title {
+  color: var(--color-dark);
+}
+.dark-mode .concept-description {
+  color: var(--color-dark);
+}

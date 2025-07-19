@@ -1,0 +1,39 @@
+/* 🌟 GENERAL STYLING (Functionality & Layout First) */
+.language-picker {
+  padding: 5px 10px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🌟 COLOR STYLING */
+/* 🔹 Light Mode */
+.light-mode .language-picker {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+.light-mode .language-picker:hover {
+  border-color: #28a745;
+}
+
+.light-mode .language-picker:focus {
+  border-color: #218838;
+}
+
+/* 🔹 Dark Mode */
+.dark-mode .language-picker {
+  background: var(--color-dark-alt);
+  color: var(--color-dark);
+  background-color: var(--color-light-gray);
+}
+
+.dark-mode .language-picker:hover {
+  border-color: var(--color-light-green);
+}
+
+.dark-mode .language-picker:focus {
+  border-color: var(--color-green);
+}

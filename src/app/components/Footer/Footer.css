@@ -1,0 +1,125 @@
+/* 🌟 GENERAL FOOTER STYLING */
+.footer {
+  padding: 50px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  font-family: var(--font-primary);
+  margin: auto;
+}
+
+/* 🔹 Lazy Load Animation for Social Media Icons */
+.social-media-icons-container.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.social-media-icons-container.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🔹 Footer Sections */
+.footer > * {
+  width: 100%;
+  text-align: center;
+}
+
+/* 🔹 Newsletter Section */
+.footer .newsletter {
+  padding: 25px;
+  border-radius: 15px;
+}
+
+/* 🔹 Quick Links Section */
+.footer .quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.footer .quick-links a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer .quick-links a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Social Media Icons */
+.footer .social-media-icons {
+  padding: 18px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.footer .social-media-icons a {
+  font-size: 1.6rem;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.footer .social-media-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* 🌟 LIGHT & DARK MODE SUPPORT */
+.light-mode .footer {
+  background-color: var(--color-light-green);
+  color: var(--color-dark);
+}
+.light-mode .footer .social-media-icons{
+  width: 100%;
+  background-color: var(--color-light-green-transparent);
+}
+/* 🔹 Apply Dark Mode */
+.dark-mode .footer {
+  background-color: var(--color-dark-transparent);
+  color: var(--color-white);
+}
+.dark-mode .footer .social-media-icons{
+  width: 100%;
+  background-color: var(--color-dark);
+}
+.dark-mode .footer .social-media-icons .icon{
+  background-color: var(--color-light-green-transparent);
+}
+.dark-mode .footer .social-media-icons .icon:hover{
+  background-color: var(--color-light-gray);
+}
+/* 🌟 RESPONSIVE DESIGN */
+@media (max-width: 1024px) {
+  .footer {
+    padding: 40px 20px;
+  }
+  .footer .quick-links {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 35px 15px;
+  }
+  .footer .quick-links a {
+    font-size: 1rem;
+  }
+  .footer .social-media-icons .icon{
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 10px;
+  }
+  .footer .quick-links a,
+  .footer .social-media-icons a {
+    font-size: 0.9rem;
+  }
+}

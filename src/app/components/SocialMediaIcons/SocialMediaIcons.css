@@ -1,0 +1,80 @@
+.social-media-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--social-icon-gap, 15px); /* Default gap between icons */
+  padding: 0.625rem; /* 10px */
+  backdrop-filter: var(--social-blur-effect, blur(8px));
+  border-radius: 1.25rem; /* 20px */
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.social-media-icons a {
+  text-decoration: none;
+  color: var(--social-icon-color, #fff); /* Default fallback color */
+}
+
+.icon {
+  font-size: var(--social-icon-size, 2rem); /* Default icon size */
+  padding: 0.625rem; /* 10px */
+  color: var(--social-icon-color, #fff);
+  background: var(--social-icon-bg, #313a43e6); /* Default background color */
+  backdrop-filter: var(--icon-blur-effect, blur(4px)); /* Slightly less blur for icons */
+  border-radius: 0.375rem; /* 6px */
+  transition: transform var(--transition-duration, 0.3s ease),
+    color var(--transition-duration, 0.3s ease),
+    background-color var(--transition-duration, 0.3s ease);
+}
+
+.icon:hover {
+  transform: scale(var(--social-hover-scale, 1.2));
+  background: var(--social-icon-hover-bg, rgba(255, 255, 255, 0.685));
+}
+
+/* Icon-Specific Hover Colors */
+.instagram:hover {
+  color: #e4405f;
+}
+
+.tiktok:hover {
+  color: #000000;
+}
+
+.x:hover {
+  color: #1da1f2;
+}
+
+.linkedin:hover {
+  color: #0077b5;
+}
+
+.youtube:hover {
+  color: #ff0000;
+}
+
+.pinterest:hover {
+  color: #e60023;
+}
+
+.facebook:hover {
+  color: #1877f2;
+}
+
+/* Focus Styles */
+.icon:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .social-media-icons {
+    gap: 0.625rem; /* 10px */
+  }
+
+  .icon {
+    font-size: 1.5rem;
+    padding: 0.5rem; /* 8px */
+  }
+}

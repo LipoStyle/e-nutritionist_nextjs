@@ -1,0 +1,32 @@
+{
+  "en": {
+    "title": "Subscribe to Our Newsletter",
+    "description": "Get the latest updates, recipes, and offers delivered to your inbox.",
+    "placeholder": "Enter your email",
+    "subscribeButton": "Subscribe",
+    "successMessage": "Thank you for subscribing!",
+    "errorMessage": "Something went wrong. Please try again.",
+    "invalidEmailMessage": "Please enter a valid email address.",
+    "generalErrorMessage": "Unable to subscribe at this time. Please try again later."
+  },
+  "es": {
+    "title": "Suscríbete a Nuestro Boletín",
+    "description": "Recibe las últimas actualizaciones, recetas y ofertas en tu bandeja de entrada.",
+    "placeholder": "Introduce tu correo electrónico",
+    "subscribeButton": "Suscribirse",
+    "successMessage": "¡Gracias por suscribirte!",
+    "errorMessage": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "invalidEmailMessage": "Por favor, introduce una dirección de correo válida.",
+    "generalErrorMessage": "No se pudo completar la suscripción. Inténtalo más tarde."
+  },
+  "el": {
+    "title": "Εγγραφείτε στο Newsletter μας",
+    "description": "Λάβετε τις τελευταίες ενημερώσεις, συνταγές και προσφορές στο email σας.",
+    "placeholder": "Εισάγετε το email σας",
+    "subscribeButton": "Εγγραφή",
+    "successMessage": "Ευχαριστούμε για την εγγραφή σας!",
+    "errorMessage": "Κάτι πήγε στραβά. Παρακαλώ δοκιμάστε ξανά.",
+    "invalidEmailMessage": "Παρακαλώ εισάγετε ένα έγκυρο email.",
+    "generalErrorMessage": "Η εγγραφή δεν ήταν δυνατή αυτή τη στιγμή. Δοκιμάστε αργότερα."
+  }
+}

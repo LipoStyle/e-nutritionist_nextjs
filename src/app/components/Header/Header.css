@@ -1,0 +1,103 @@
+/* 🌟 GENERAL STYLING (Functionality & Layout First) */
+.header {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header.hidden {
+  transform: translateY(-100%);
+}
+
+/* 🔹 First Row: Navigation, Features, CTA */
+.header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 60px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* 🔹 Features Section (Dark Mode & Language Picker) */
+.header-features {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 🔹 Second Row: Logo */
+.header-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* 🌟 COLOR STYLING */
+/* 🔹 Light Mode */
+.light-mode .header-top {
+  background-color: var(--color-light-green-transparent);
+}
+.light-mode .header .cta-button{
+  color: var(--color-white);
+  background-color: var(--color-dark);
+}
+.light-mode .header .cta-button::before{
+  background-color: var(--color-white);
+}
+.light-mode .header .cta-button:hover{
+  color: var(--color-dark);
+}
+/* 🔹 Dark Mode */
+.dark-mode .header-top {
+  background-color: var(--color-dark-transparent);
+}
+.dark-mode .header .cta-button{
+  color: var(--color-white);
+}
+/* 🌟 RESPONSIVE DESIGN */
+@media (max-width: 840px) {
+  .header {
+    font-size: 14px;
+  }
+
+  .header-top {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    gap: 12px;
+  }
+
+  .burger-button {
+    width: 30px;
+  }
+
+  .header-features {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  .navbar {
+    display: none; /* Hide Navbar on Mobile */
+  }
+
+  .navbar.active {
+    display: flex;
+    transform: translateX(0);
+  }
+}

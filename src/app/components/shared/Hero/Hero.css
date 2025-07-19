@@ -1,0 +1,202 @@
+/* ================================
+   Base Layout
+================================ */
+.page-hero {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 180px; /* Reduced padding for better spacing */
+}
+
+/* ================================
+   Background & Overlay
+================================ */
+.page-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: center / cover no-repeat;
+  animation: zoomIn 3s ease-in-out forwards;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-overlay);
+  opacity: 0.5; /* Slightly reduce opacity for a more subtle overlay */
+}
+
+/* ================================
+   Content Area
+================================ */
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 60px;
+  max-width: 1200px; /* Added max-width to prevent excessive width on large screens */
+  margin: 0 auto; /* Center content horizontally */
+}
+
+/* ================================
+   Typography & Fade Animations
+================================ */
+.page-hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Adjusted for better scaling */
+    max-width: 90%;
+  }
+  .page-hero-content p {
+    font-size: clamp(1rem, 4vw, 1.6rem);
+    width: 90%;
+    margin: 20px auto 40px;
+    line-height: 1.2;
+  }
+.page-hero-content h1,
+.page-hero-content p,
+.cta-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-in-out;
+
+}
+
+.page-hero-content p {
+  transform: translateX(-30px);
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.fade-in-left {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* ================================
+   CTA Section
+================================ */
+.cta-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  /* margin-top: 30px; */
+
+  width: 100%;
+  padding: 24px;
+  border-radius: 24px;
+  /* background-color: rgba(0, 0, 0, 0.438); */
+}
+
+.cta-message {
+  font-size: 1.4rem; /* Slightly reduced font size */
+  color: var(--color-white);
+  font-weight: 600; /* Bold for better visibility */
+  letter-spacing: 0.5px;
+  text-transform: uppercase; /* Added uppercase for emphasis */
+
+}
+
+/* ================================
+   Zoom Background Animation
+================================ */
+@keyframes zoomIn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+/* ================================
+   Light & Dark Mode Text
+================================ */
+.light-mode .page-hero-content h1,
+.light-mode .page-hero-content p,
+.dark-mode .page-hero-content h1,
+.dark-mode .page-hero-content p {
+  color: rgb(238, 245, 241);
+}
+
+/* ================================
+   Responsive Design
+================================ */
+@media (max-width: 1024px) {
+  /* Smaller screens (Tablets) */
+  .page-hero-content {
+    padding: 0 20px 40px;
+  }
+
+  .cta-wrapper {
+    margin-top: 25px;
+  }
+
+  .cta-message {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Medium screens (Portrait devices) */
+  .page-hero-content {
+    padding: 0 15px 30px;
+  }
+
+  .page-hero-content h1 {
+    margin-top: 40px;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    max-width: 100%;
+  }
+
+  .page-hero-content p {
+    font-size: 1.2rem;
+    letter-spacing: 0.8px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .cta-message {
+    font-size: 1.3rem;
+  }
+
+  .cta-wrapper {
+    margin-top: 20px;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small screens (Mobile devices) */
+  .page-hero-content h1 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    max-width: 100%;
+  }
+
+  .page-hero-content p {
+    font-size: 1.1rem;
+    width: 100%;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+
+  .cta-message {
+    font-size: 1.1rem;
+  }
+
+  .cta-wrapper {
+    margin-top: 15px;
+    gap: 12px;
+  }
+}

@@ -1,0 +1,61 @@
+/* 🌟 GENERAL STYLING (Functionality & Layout First) */
+.dark-mode-toggle {
+  width: 50px;
+  height: 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* 🔹 Toggle Button (Icon inside) */
+.toggle-bar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 🌟 COLOR STYLING */
+/* 🔹 Light Mode */
+.light-mode .dark-mode-toggle {
+  background-color: var(--color-light-gray);
+}
+
+.light-mode .toggle-bar {
+  background-color: var(--color-white);
+}
+
+/* 🔹 Dark Mode */
+.dark-mode .dark-mode-toggle {
+  background-color: var(--color-light-gray);
+}
+
+.dark-mode .toggle-bar {
+  background-color: var(--color-dark);
+}
+
+/* 🌟 TOGGLE ANIMATIONS */
+/* 🔹 Moon Icon (Dark Mode) */
+.toggle-bar.dark {
+  transform: translateX(24px);
+}
+
+/* 🔹 Sun Icon (Light Mode) */
+.toggle-bar.light {
+  transform: translateX(0);
+}
+
+/* 🔹 Icon */
+.toggle-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease-in-out;
+}

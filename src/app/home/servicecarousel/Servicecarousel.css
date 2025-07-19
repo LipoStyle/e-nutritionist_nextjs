@@ -1,0 +1,199 @@
+/* ========== Section Layout ========== */
+.carousel-section {
+  padding: 4rem 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease-in-out;
+}
+
+
+/* Base title style */
+.carousel-title {
+  padding: 24px;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--color-dark);
+}
+
+
+/* Carousel Cards */
+.carousel-card {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 420px;
+  padding: 24px;
+  transition: transform 0.4s ease;
+  text-align: center;
+}
+
+.carousel-card:hover {
+  transform: translateY(-8px);
+}
+
+.carousel-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.carousel-plan-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.carousel-plan-desc {
+  font-size: 14px;
+  letter-spacing: 1px;
+  max-width: 90%;
+  line-height: 1.6;
+}
+
+.carousel-button {
+  position: relative;
+  padding: 12px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  overflow: hidden;
+  border-radius: 0;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
+}
+
+.carousel-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  z-index: -1;
+  transition: left 0.3s ease-in-out;
+}
+
+.carousel-button:hover::before {
+  left: 0;
+}
+
+.carousel-button:hover {
+  color: #f5f5f5;
+}
+
+/* Color Themes */
+.bg-1 {
+  background-color: #2ecc71;
+  color: #f5f5f5;
+}
+.bg-1 .carousel-plan-title,
+.bg-1 .carousel-plan-desc {
+  color: #f5f5f5;
+}
+.bg-1 .carousel-button {
+  background-color: #f5f5f5;
+  color: #2ecc71;
+}
+.bg-1 .carousel-button:hover::before {
+  background-color: #313a43;
+}
+
+.bg-2 {
+  background-color: #313a43;
+  color: #f5f5f5;
+}
+.bg-2 .carousel-plan-title {
+  color: #2ecc71;
+}
+.bg-2 .carousel-plan-desc {
+  color: #f5f5f5;
+}
+.bg-2 .carousel-button {
+  background-color: #f5f5f5;
+  color: #313a43;
+}
+.bg-2 .carousel-button:hover::before {
+  background-color: #2ecc71;
+}
+
+.bg-3 {
+  background-color: #f5f5f5;
+  color: #313a43;
+}
+.bg-3 .carousel-plan-title {
+  color: #2ecc71;
+}
+.bg-3 .carousel-plan-desc {
+  color: #313a43;
+}
+.bg-3 .carousel-button {
+  background-color: #2ecc71;
+  color: #f5f5f5;
+}
+.bg-3 .carousel-button:hover::before {
+  background-color: #313a43;
+}
+
+/* Skeleton Loader */
+.skeleton-title {
+  width: 250px;
+  height: 32px;
+  margin: 0 auto 40px auto;
+  background: #ddd;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+.carousel-skeleton-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.skeleton-card {
+  width: 90%;
+  max-width: 320px;
+  height: 420px;
+  background: #eee;
+  border-radius: 12px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { background-color: #f0f0f0; }
+  50% { background-color: #e0e0e0; }
+  100% { background-color: #f0f0f0; }
+}
+
+/* Fallback States */
+.carousel-status {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--color-dark);
+  padding: 30px;
+}
+
+/* Responsive */
+@media (max-width: 1040px) {
+  .carousel-plan-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-plan-title {
+    font-size: 20px;
+  }
+
+  .carousel-plan-desc {
+    font-size: 13px;
+    letter-spacing: 0;
+  }
+
+  .carousel-button {
+    font-size: 14px;
+  }
+}

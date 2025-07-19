@@ -1,0 +1,32 @@
+.logo-and-copyright{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+.logo-and-copyright .homepg-logo {
+  width: 100%;
+  
+}
+.logo-link{
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lazy Load Animation */
+.lazy-load {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Animation Triggered when in View */
+.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.logo-and-copyrigh .logo-section{
+  background-color: unset;
+}

@@ -1,0 +1,104 @@
+/* 🌟 GENERAL STYLING (Functionality & Layout First) */
+.logo-pack {
+  padding: 5px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 🔹 Logo Container */
+.homepg-logo {
+  width: fit-content;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* 🔹 Logo Link (Remove Underline) */
+.logo-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 🔹 Logo Image */
+.logo-img {
+  width: 50px;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+/* 🔹 Logo Text */
+.logo-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+/* 🔹 Author Name */
+.author-name {
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* 🔹 Author Job */
+.author-job {
+  font-size: 21px;
+  font-style: italic;
+}
+
+/* 🌟 COLOR STYLING */
+/* 🔹 Light Mode */
+.light-mode .homepg-logo {
+  background-color: var(--color-light-green-transparent);
+}
+.light-mode .logo-img{
+  background-color: aliceblue;
+}
+.light-mode .author-name {
+  color: var(--color-dark);
+}
+
+.light-mode .author-job {
+  color: var(--color-white);
+}
+
+/* 🔹 Dark Mode */
+.dark-mode .homepg-logo {
+  background-color: var(--color-dark-transparent);
+}
+
+.dark-mode .author-name {
+  color: var(--color-white);
+}
+
+.dark-mode .author-job {
+  color: var(--color-light-green);
+}
+
+/* 🌟 RESPONSIVE DESIGN */
+@media (max-width: 840px) {
+  .homepg-logo {
+    padding: 8px 0;
+  }
+
+  .logo-img {
+    width: 40px;
+  }
+
+  .author-name {
+    font-size: 20px;
+  }
+
+  .author-job {
+    font-size: 16px;
+  }
+}
